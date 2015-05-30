@@ -4,3 +4,4 @@ tmp
 phantomas
 .sass-cache
 tasks/lib/phantomas-cov.js
+.idea
