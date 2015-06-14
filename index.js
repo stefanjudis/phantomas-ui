@@ -1,10 +1,12 @@
 #! /usr/bin/env node
 
 'use strict';
+
+//var phantomasui = require('..');
 var _ = require('lodash');
 var debug = require('debug')('phantomas-ui:cli');
+var logger = require('./lib/logger');
 var cliOptions = require ('minimist')(process.argv.slice(2));
-
 
 var PhantomasUI = function () {}
 
@@ -14,9 +16,21 @@ PhantomasUI.prototype.getOptionsFromCommandline = function () {
 }
 
 PhantomasUI.prototype.run = function (options, cb) {
-  console.log(options);
-  cb();
+
+  var cmdOptions = this.getOptionsFromCommandline();
+
+  if (!cmdOptions.url) {
+    logger
+      .purpose('\nGraphical user interface for phantomas, based on phantomjs\n\nphantomas-ui <url> [options]\n')
+      .describe ('url', 'String <required>', 'Enter URL you want to collect performance metrics for e.g; --url http://domain.com')
+      .describe ('[options]', 'String <optional>', 'Full list of options coming soon')
+      .printDescribes();
+  }
+
 }
+
+var phantomasui = new PhantomasUI();
+phantomasui.run();
 
 module.exports = PhantomasUI;
 
