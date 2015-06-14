@@ -23,7 +23,9 @@ PhantomasUI.prototype.run = function (options, cb) {
     logger
       .purpose('\nGraphical user interface for phantomas, based on phantomjs\n\nphantomas-ui <url> [options]\n')
       .describe ('url', 'String <required>', 'Enter URL you want to collect performance metrics for e.g; --url http://domain.com')
-      .describe ('[options]', 'String <optional>', 'Full list of options coming soon')
+      .describe ('[options]', 'String <optional>', 'WIP')
+      .describe ('help', '', 'Show full list of options')
+
       .printDescribes();
   }
 
