@@ -22,6 +22,7 @@ PhantomasUI.prototype.getOptionsFromCommandline = function (cliOptions) {
 
   options.url = cliOptions.url;
   options.path = cliOptions.path;
+  options.help = cliOptions.help;
   options.assertions = assertions;
 
   return options;
@@ -29,30 +30,39 @@ PhantomasUI.prototype.getOptionsFromCommandline = function (cliOptions) {
 
 PhantomasUI.prototype.run = function (options) {
 
-  if (!options.url || options.url === true) {
-    logger
-      .purpose('\nGraphical user interface for phantomas, based on phantomjs\n\nphantomas-ui <url> [options]\n')
-      .describe ('url',                   'String <required>',  'Enter URL you want to collect performance metrics for e.g; --url http://domain.com/')
-      .describe ('[options]',             'String <optional>',  'WIP')
-      .describe ('help',                  '',                   'Show full list of options')
-      .describe ('assetsWithQueryString', 'Number <optional>',  'Description')
-      .describe ('biggestLatency',        'Number <optional>',  'Description')
-      .describe ('bodyHTMLSize',          'Number <optional>',  'Description')
-      .describe ('commentsSize',          'Number <optional>',  'Description')
-      .describe ('consoleMessages',       'Number <optional>',  'Description')
-      .describe ('hiddenContentSize',     'Number <optional>',  'Description')
-      .describe ('jsErrors',              'Number <optional>',  'Description')
-      .describe ('gzipRequests',          'Number <optional>',  'Description')
-      .describe ('medianResponse',        'Number <optional>',  'Description')
-      .describe ('nodesWithInlineCSS',    'Number <optional>',  'Description')
-      .describe ('requests',              'Number <optional>',  'Description')
-      .describe ('timeToFirstImage',      'Number <optional>',  'Description')
-      .describe ('DOMelementsCount',      'Number <optional>',  'Description')
-      .describe ('DOMqueries',            'Number <optional>',  'Description')
-      .describe ('path',                  'String <optional>',  'Description')
-      .printDescribes();
+  if (options.url === undefined || options.url === true || options.help === true) {
+    this.showHelp();
   }
 
+
+}
+
+PhantomasUI.prototype.showHelp = function () {
+  logger
+    .purpose('\nGraphical user interface for phantomas, based on phantomjs\n\nphantomas-ui <url> [options]\n')
+    .describe ('help',                  '',                   'Show full list of options')
+    .describe ('url',                   'String <required>',  'Enter URL want to collect performance metrics for e.g; --url http://domain.com/')
+    .describe ('assert-assetsWithQueryString',  'Number <optional>',    'Receive warning, when there are more than 3 assets with a query string')
+    .describe ('assert-biggestLatency',         'Number <optional>',    'Description')
+    .describe ('assert-bodyHTMLSize',           'Number <optional>',    'Receive warning, when the bodyHTMLsize is bigger given size mentioned in parameter')
+    .describe ('assert-commentsSize',           'Number <optional>',    'Description')
+    .describe ('assert-consoleMessages',        'Number <optional>',    'Description')
+    .describe ('assert-hiddenContentSize',      'Number <optional>',    'Description')
+    .describe ('assert-jsErrors',               'Number <optional>',    'Receive warning, when more than JS errors appear')
+    .describe ('assert-gzipRequests',           'Number <optional>',    'Receive warning, when uncompressed assets are loaded')
+    .describe ('assert-medianResponse',         'Number <optional>',    'Description')
+    .describe ('assert-nodesWithInlineCSS',     'Number <optional>',    'Description')
+    .describe ('assert-requests',               'Number <optional>',    'Description')
+    .describe ('assert-timeToFirstImage',       'Number <optional>',    'Description')
+    .describe ('assert-DOMelementsCount',       'Number <optional>',    'Description')
+    .describe ('assert-DOMqueries',             'Number <optional>',    'Description')
+    .describe ('buildUi',                       'Boolean <optional>',   'Description')
+    .describe ('limitIncludedRuns',             'Number <optional>',    'Description')
+    .describe ('numberOfRuns',                  'Number <optional>',    'Description')
+    .describe ('phantomas-options',             'Str|Num <optional>',   'Description')
+    .describe ('output',                        'Number <optional>',    'Description')
+    .describe ('path',                          'String <optional>',    'Description')
+    .printDescribes();
 }
 
 var phantomasui = new PhantomasUI();
