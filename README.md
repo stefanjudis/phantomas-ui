@@ -1,4 +1,4 @@
-# phantomas-ui (ignore README.md, it changing)
+# phantomas-ui (ignore README.md, its changing)
 
 [![Build Status](http://img.shields.io/travis/stefanjudis/grunt-phantomas.svg?style=flat)](https://travis-ci.org/stefanjudis/grunt-phantomas) [![bnpm version](http://img.shields.io/npm/v/grunt-phantomas.svg?style=flat)](https://www.npmjs.org/package/grunt-phantomas) [![npm downloads](http://img.shields.io/npm/dm/grunt-phantomas.svg?style=flat)](https://www.npmjs.org/package/grunt-phantomas) [![Dependency Status](http://img.shields.io/gemnasium/stefanjudis/grunt-phantomas.svg?style=flat)](https://gemnasium.com/stefanjudis/grunt-phantomas) [![Coverage Status](http://img.shields.io/coveralls/stefanjudis/grunt-phantomas.svg?style=flat)](https://coveralls.io/r/stefanjudis/grunt-phantomas?branch=master) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
