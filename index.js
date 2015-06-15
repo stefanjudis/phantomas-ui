@@ -32,12 +32,26 @@ PhantomasUI.prototype.run = function (options) {
   if (!options.url || options.url === true) {
     logger
       .purpose('\nGraphical user interface for phantomas, based on phantomjs\n\nphantomas-ui <url> [options]\n')
-      .describe ('url',       'String <required>',  'Enter URL you want to collect performance metrics for e.g; --url http://domain.com/')
-      .describe ('[options]', 'String <optional>',  'WIP')
-      .describe ('help',      '',                   'Show full list of options')
+      .describe ('url',                   'String <required>',  'Enter URL you want to collect performance metrics for e.g; --url http://domain.com/')
+      .describe ('[options]',             'String <optional>',  'WIP')
+      .describe ('help',                  '',                   'Show full list of options')
+      .describe ('assetsWithQueryString', 'Number <optional>',  'Description')
+      .describe ('biggestLatency',        'Number <optional>',  'Description')
+      .describe ('bodyHTMLSize',          'Number <optional>',  'Description')
+      .describe ('commentsSize',          'Number <optional>',  'Description')
+      .describe ('consoleMessages',       'Number <optional>',  'Description')
+      .describe ('hiddenContentSize',     'Number <optional>',  'Description')
+      .describe ('jsErrors',              'Number <optional>',  'Description')
+      .describe ('gzipRequests',          'Number <optional>',  'Description')
+      .describe ('medianResponse',        'Number <optional>',  'Description')
+      .describe ('nodesWithInlineCSS',    'Number <optional>',  'Description')
+      .describe ('requests',              'Number <optional>',  'Description')
+      .describe ('timeToFirstImage',      'Number <optional>',  'Description')
+      .describe ('DOMelementsCount',      'Number <optional>',  'Description')
+      .describe ('DOMqueries',            'Number <optional>',  'Description')
+      .describe ('path',                  'String <optional>',  'Description')
       .printDescribes();
   }
-
 
 }
 
